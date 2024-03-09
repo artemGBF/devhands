@@ -1,0 +1,29 @@
+micronaut:
+  application:
+    name: devhands
+  cache:
+    redis:
+      enabled: false
+
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/devhands
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    maximum-pool-size: 5
+    minimum-idle: 2
+    idle-timeout: 120000
+
+redis:
+  uri: redis://localhost:6380
+  caches:
+    flights:
+      expire-after-write: 1h
+  pool:
+    enabled: false
+
+devhands:
+  scheduling:
+    enabled: true
+
