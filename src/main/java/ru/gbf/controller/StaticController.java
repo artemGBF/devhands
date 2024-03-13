@@ -1,4 +1,4 @@
-package com.example.controller;
+package ru.gbf.controller;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;

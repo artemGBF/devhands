@@ -1,9 +1,9 @@
-package com.example.service;
+package ru.gbf.service;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import com.example.model.Flight;
+import ru.gbf.model.Flight;
 
 public interface FlightService {
 

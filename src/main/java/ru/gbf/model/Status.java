@@ -1,4 +1,4 @@
-package com.example.model;
+package ru.gbf.model;
 
 public enum Status {
     PLANNED,

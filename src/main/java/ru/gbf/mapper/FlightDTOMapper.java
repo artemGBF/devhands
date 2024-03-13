@@ -1,9 +1,9 @@
-package com.example.mapper;
+package ru.gbf.mapper;
 
 import java.util.List;
 
-import com.example.dto.FlightDTO;
-import com.example.model.Flight;
+import ru.gbf.dto.FlightDTO;
+import ru.gbf.model.Flight;
 import org.mapstruct.Mapper;
 
 import static org.mapstruct.MappingConstants.ComponentModel.JSR330;

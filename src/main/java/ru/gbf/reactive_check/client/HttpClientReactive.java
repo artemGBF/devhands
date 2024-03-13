@@ -1,4 +1,4 @@
-package com.example.reactive_check.client;
+package ru.gbf.reactive_check.client;
 
 import io.micronaut.core.async.annotation.SingleResult;
 import io.micronaut.http.annotation.Get;

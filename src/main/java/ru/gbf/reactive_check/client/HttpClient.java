@@ -1,4 +1,4 @@
-package com.example.reactive_check.client;
+package ru.gbf.reactive_check.client;
 
 import java.util.List;
 

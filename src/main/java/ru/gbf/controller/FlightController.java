@@ -1,11 +1,11 @@
-package com.example.controller;
+package ru.gbf.controller;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import com.example.dto.FlightDTO;
-import com.example.mapper.FlightDTOMapper;
-import com.example.service.FlightServiceImpl;
+import ru.gbf.dto.FlightDTO;
+import ru.gbf.mapper.FlightDTOMapper;
+import ru.gbf.service.FlightServiceImpl;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;

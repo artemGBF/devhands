@@ -1,4 +1,4 @@
-package com.example;
+package ru.gbf;
 
 import io.micronaut.runtime.Micronaut;
 

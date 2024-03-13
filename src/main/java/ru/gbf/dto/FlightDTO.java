@@ -1,8 +1,8 @@
-package com.example.dto;
+package ru.gbf.dto;
 
 import java.io.Serializable;
 
-import com.example.model.Status;
+import ru.gbf.model.Status;
 import io.micronaut.serde.annotation.Serdeable;
 import lombok.Data;
 

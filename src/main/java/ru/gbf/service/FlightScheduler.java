@@ -1,4 +1,4 @@
-package com.example.service;
+package ru.gbf.service;
 
 import java.time.LocalDate;
 

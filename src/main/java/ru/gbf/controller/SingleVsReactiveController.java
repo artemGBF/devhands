@@ -1,17 +1,14 @@
-package com.example.controller;
+package ru.gbf.controller;
 
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import com.example.model.Flight;
-import com.example.model.Status;
-import com.example.reactive_check.client.HttpClient;
-import com.example.reactive_check.client.HttpClientReactive;
-import com.example.reactive_check.client.SlowData;
-import com.example.repository.FlightReactiveRepository;
-import com.example.repository.FlightRepository;
+import ru.gbf.model.Flight;
+import ru.gbf.reactive_check.client.HttpClient;
+import ru.gbf.reactive_check.client.HttpClientReactive;
+import ru.gbf.reactive_check.client.SlowData;
+import ru.gbf.repository.FlightReactiveRepository;
+import ru.gbf.repository.FlightRepository;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.scheduling.TaskExecutors;

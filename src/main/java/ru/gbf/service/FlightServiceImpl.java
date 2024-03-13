@@ -1,4 +1,4 @@
-package com.example.service;
+package ru.gbf.service;
 
 import java.security.SecureRandom;
 import java.time.LocalDate;
@@ -6,11 +6,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.model.Flight;
-import com.example.model.Status;
-import com.example.repository.FlightRepository;
-import io.micronaut.cache.annotation.CacheInvalidate;
-import io.micronaut.cache.annotation.Cacheable;
+import ru.gbf.model.Flight;
+import ru.gbf.model.Status;
+import ru.gbf.repository.FlightRepository;
 import jakarta.inject.Singleton;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
