@@ -20,16 +20,14 @@ public class StaticController {
         ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
         long startTime = threadMXBean.getCurrentThreadCpuTime();
         //processor loading
-        while (threadMXBean.getCurrentThreadCpuTime() - startTime < totalTime * 1000000000) {
-            for (int i = 0; i < 100000; i++) {
-                byte[] data = new byte[64 * 1024]; // 64К данных
-                String md5Hash = DigestUtils.md5Hex(data);
-                md5Hash = md5Hash.trim();
-            }
+        while (threadMXBean.getCurrentThreadCpuTime() - startTime < totalTime * 1000000) {
+            byte[] data = new byte[64 * 1024]; // 64К данных
+            String md5Hash = DigestUtils.md5Hex(data);
+            md5Hash = md5Hash.trim();
         }
         //IO
         try {
-            Thread.sleep(sleepTime * 1000);
+            Thread.sleep((long) (0.82 * sleepTime));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

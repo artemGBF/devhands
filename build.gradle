@@ -5,7 +5,7 @@ plugins {
     id("io.micronaut.aot") version "4.3.3"
 }
 
-version = "5"
+version = "5.2"
 group = "ru.gbf"
 
 repositories {
@@ -26,13 +26,18 @@ dependencies {
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("commons-codec:commons-codec:1.15")
+    implementation("io.micronaut.data:micronaut-data-r2dbc")
+    implementation("io.r2dbc:r2dbc-pool:1.0.1.RELEASE")
+    implementation("org.postgresql:r2dbc-postgresql:1.0.2.RELEASE")
+
+    implementation("io.micronaut.reactor:micronaut-reactor")
+    implementation("io.micronaut.reactor:micronaut-reactor-http-client")
 
     compileOnly("io.micronaut:micronaut-http-client")
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("org.postgresql:postgresql")
     runtimeOnly("org.yaml:snakeyaml")
-    testImplementation("io.micronaut:micronaut-http-client")
 }
 
 

@@ -6,6 +6,8 @@ import ru.gbf.dto.FlightDTO;
 import ru.gbf.model.Flight;
 import org.mapstruct.Mapper;
 
+import reactor.core.publisher.Mono;
+
 import static org.mapstruct.MappingConstants.ComponentModel.JSR330;
 
 @Mapper(componentModel = JSR330)

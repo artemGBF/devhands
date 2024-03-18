@@ -15,6 +15,14 @@ datasources:
     minimum-idle: 2
     idle-timeout: 120000
 
+r2dbc:
+  datasources:
+    reactive:
+      dialect: POSTGRES
+      url: r2dbc:pool:postgresql://localhost:5432/devhands
+      username: ${PG_USER:postgres}
+      password: ${PG_PASSWORD:postgres}
+
 redis:
   uri: redis://localhost:6380
   caches:

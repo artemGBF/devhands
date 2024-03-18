@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import ru.gbf.model.Flight;
+import io.micronaut.data.annotation.Query;
 import io.micronaut.data.jdbc.annotation.JdbcRepository;
 import io.micronaut.data.model.query.builder.sql.Dialect;
 import io.micronaut.data.repository.CrudRepository;
@@ -17,4 +18,7 @@ public interface FlightRepository extends CrudRepository<Flight, Long> {
     List<Flight> findByEstimatedTimeBetweenAndAirportFrom(LocalDateTime startTime, LocalDateTime endTime, String airportFrom);
 
     List<Flight> findByEstimatedTimeBetweenAndAirportFromNotEqual(LocalDateTime startTime, LocalDateTime endTime, String airportFrom);
+
+    @Query("select * from public.flight order by random() limit 10000")
+    List<Flight> get10000();
 }
