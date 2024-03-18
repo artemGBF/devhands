@@ -5,7 +5,7 @@ plugins {
     id("io.micronaut.aot") version "4.3.3"
 }
 
-version = "5.2"
+version = "7"
 group = "ru.gbf"
 
 repositories {
@@ -29,6 +29,7 @@ dependencies {
     implementation("io.micronaut.data:micronaut-data-r2dbc")
     implementation("io.r2dbc:r2dbc-pool:1.0.1.RELEASE")
     implementation("org.postgresql:r2dbc-postgresql:1.0.2.RELEASE")
+    implementation 'org.jfree:jfreechart:1.5.0'
 
     implementation("io.micronaut.reactor:micronaut-reactor")
     implementation("io.micronaut.reactor:micronaut-reactor-http-client")
