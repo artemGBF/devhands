@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.DecimalFormat;
 
 import io.micronaut.http.HttpResponse;
@@ -15,6 +18,12 @@ import ru.gbf.dto.ChartDTO;
 
 @Controller("/api/graph")
 public class GraphController {
+
+    @Get("/web")
+    public HttpResponse<String> getHtmlFile() throws IOException {
+        String htmlContent = Files.readString(Paths.get("src/main/resources/web.html"));
+        return HttpResponse.ok(htmlContent).contentType("text/html");
+    }
 
     @Get
     public MutableHttpResponse<ChartDTO> build() {
