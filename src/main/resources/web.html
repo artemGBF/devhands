@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>График</title>
+</head>
+<body>
+<h1>График</h1>
+<button onclick="buildGraph()">Построить график</button>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    function buildGraph() {
+        fetch('http://localhost:8080/api/graph')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.createElement('canvas').getContext('2d');
+                document.body.appendChild(ctx.canvas);
+
+                new Chart(ctx, {
+                    type: 'line',
+                    data: data,
+                    options: {
+                        scales: {
+                            y: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Произошла ошибка:', error));
+    }
+
+</script>
+</body>
+</html>

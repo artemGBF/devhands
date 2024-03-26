@@ -4,6 +4,9 @@ micronaut:
   cache:
     redis:
       enabled: false
+  server:
+    cors:
+      enabled: true
 
 datasources:
   default:
