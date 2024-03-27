@@ -12,7 +12,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     function buildGraph() {
-        fetch('http://localhost:8080/api/graph')
+        fetch('http://193.164.150.57:8080/api/graph')
             .then(response => response.json())
             .then(data => {
                 const ctx = document.createElement('canvas').getContext('2d');
@@ -23,11 +23,15 @@
                     data: data,
                     options: {
                         scales: {
-                            y: [{
+                            x: {
+                                type: 'linear',
+                                position: 'bottom'
+                            },
+                            y: {
                                 ticks: {
                                     beginAtZero: true
                                 }
-                            }]
+                            }
                         }
                     }
                 });

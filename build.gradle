@@ -5,7 +5,7 @@ plugins {
     id("io.micronaut.aot") version "4.3.3"
 }
 
-version = "9"
+version = "10"
 group = "ru.gbf"
 
 repositories {

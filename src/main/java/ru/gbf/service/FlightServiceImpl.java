@@ -6,12 +6,12 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.gbf.model.Flight;
-import ru.gbf.model.Status;
-import ru.gbf.repository.FlightRepository;
 import jakarta.inject.Singleton;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import ru.gbf.model.Flight;
+import ru.gbf.model.Status;
+import ru.gbf.repository.FlightRepository;
 
 @Slf4j
 @Singleton
@@ -23,11 +23,16 @@ public class FlightServiceImpl implements FlightService {
     private final SecureRandom random = new SecureRandom();
 
     //@Cacheable(value = "flights")
-    public List<Flight> getFlightsToDate(LocalDate date, boolean outgoing) {
-        if (outgoing) {
-            return flightRepository.findByEstimatedTimeBetweenAndAirportFrom(date.atStartOfDay(), date.atStartOfDay().plusDays(1), "MOW");
-        }
-        return flightRepository.findByEstimatedTimeBetweenAndAirportFromNotEqual(date.atStartOfDay(), date.atStartOfDay().plusDays(1), "MOW");
+    public List<Flight> getFlightsToDate1PK(LocalDate date) {
+        return flightRepository.findByEstimatedTimeBetween(date.atStartOfDay(), date.atStartOfDay().plusDays(1));
+    }
+
+    public List<Flight> getFlightsToDate5PK(LocalDate date) {
+        flightRepository.findByEstimatedTimeBetween(date.minusDays(10).atStartOfDay(), date.minusDays(10).atStartOfDay().plusDays(1));
+        flightRepository.findByEstimatedTimeBetween(date.minusDays(8).atStartOfDay(), date.minusDays(8).atStartOfDay().plusDays(1));
+        flightRepository.findByEstimatedTimeBetween(date.minusDays(6).atStartOfDay(), date.minusDays(6).atStartOfDay().plusDays(1));
+        flightRepository.findByEstimatedTimeBetween(date.minusDays(4).atStartOfDay(), date.minusDays(4).atStartOfDay().plusDays(1));
+        return flightRepository.findByEstimatedTimeBetween(date.atStartOfDay(), date.atStartOfDay().plusDays(1));
     }
 
     //@CacheInvalidate(value = "flights", all = true)

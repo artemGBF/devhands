@@ -18,9 +18,14 @@ public class FlightController {
     private final FlightServiceImpl flightService;
     private final FlightDTOMapper flightDTOMapper;
 
-    @Get
-    public List<FlightDTO> getFlightsToDate(@QueryValue LocalDate date, @QueryValue Boolean outgoing) {
-        return flightDTOMapper.toFlightDTOs(flightService.getFlightsToDate(date, outgoing));
+    @Get("/1")
+    public List<FlightDTO> getFlightsToDate1PK(@QueryValue LocalDate date) {
+        return flightDTOMapper.toFlightDTOs(flightService.getFlightsToDate1PK(date));
+    }
+
+    @Get("/5")
+    public List<FlightDTO> getFlightsToDate5PK(@QueryValue LocalDate date) {
+        return flightDTOMapper.toFlightDTOs(flightService.getFlightsToDate5PK(date));
     }
 
     @Post

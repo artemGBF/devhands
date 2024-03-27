@@ -7,7 +7,9 @@ import ru.gbf.model.Flight;
 
 public interface FlightService {
 
-    List<Flight> getFlightsToDate(LocalDate date, boolean outgoing);
+    List<Flight> getFlightsToDate1PK(LocalDate date);
+
+    List<Flight> getFlightsToDate5PK(LocalDate date);
 
     void generateToDate(LocalDate date);
 

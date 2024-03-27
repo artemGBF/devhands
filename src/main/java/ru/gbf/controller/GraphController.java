@@ -14,24 +14,27 @@ import io.micronaut.http.MediaType;
 import io.micronaut.http.MutableHttpResponse;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.http.server.cors.CrossOrigin;
 import ru.gbf.dto.ChartDTO;
 
 @Controller("/api/graph")
 public class GraphController {
 
     @Get("/web")
+    @CrossOrigin(value = "*")
     public HttpResponse<String> getHtmlFile() throws IOException {
-        String htmlContent = Files.readString(Paths.get("src/main/resources/web.html"));
+        String htmlContent = Files.readString(Paths.get("web.html"));
         return HttpResponse.ok(htmlContent).contentType("text/html");
     }
 
     @Get
+    @CrossOrigin(value = "*")
     public MutableHttpResponse<ChartDTO> build() {
         DecimalFormat df = new DecimalFormat("#.##");
         File file = new File("data");
         File[] files = file.listFiles();
         ChartDTO chart = null;
-        try (BufferedReader reader = new BufferedReader(new FileReader(files[0]))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(files[files.length-1]))) {
             chart = new ChartDTO(files[0].getName());
             String line = reader.readLine();
             while (!line.contains("1/(1-Percentile)")) {
